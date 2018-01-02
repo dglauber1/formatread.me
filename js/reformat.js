@@ -49,13 +49,11 @@ function reformatText(textInput, marginWidth, allowOverflow, showMargin) {
 // Returns the paragraph reformatted with ideal line breaks (minimum penalty)
 function reformatParagraph(paragraph) {
     var words = paragraph.match(/\S+/g); // g for global (match all words)
+    words.push(''); // necessary so that the algorithm can put a line break after the last word
     var wordLengths = words.map(function(word) {
         return word.length;
     });
 
-    // TODO: if this.allowOverflow is false, just do the greedy algorithm, 
-    //      putting as many words as possible on the current line until
-    //      you hit the margin, then going on to the next line
     if (this.allowOverflow) {
         var distanceMatrix = computeDistances(wordLengths);
         var optimalLineBreaks = computeOptimalLineBreaks(distanceMatrix, this.marginWidth);
@@ -111,7 +109,7 @@ function computeDistances(wordLengths) {
     
     var start, end;
     for (start = 0; start < numWords - 1; start++) {
-        for (end = start + 1; end < numWords; end ++) {
+        for (end = start + 1; end < numWords; end++) {
             distanceMatrix[start][end] = distanceMatrix[start][end - 1] + 1 + wordLengths[end];
         }
     }
@@ -238,6 +236,6 @@ function addMargin(outputText, marginWidth) {
     return outputText;
 }
 
-module.exports = {
-    reformatText: reformatText
-}
+// module.exports = {
+//     reformatText: reformatText
+// }
