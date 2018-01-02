@@ -9,15 +9,27 @@
     <script src="js/main.js" defer></script>
   </head>
   <body>
-    <div class="slidecontainer">
-      <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+    <div class="settings">
+      <div>
+        <input type="checkbox" id="showmargin" checked>
+        <label for="showmargin">Show Margin</label>
+      </div>
+      <div>
+        <input type="button" value="Clear" id="clearbutton">
+      </div>
+      <div>
+        <input type="range" id="marginwidth" min="30" max="120" value="80">
+        <label for="marginwidth" id="marginlabel">Margin Width: 80</label>
+      </div>
     </div>
     <div class="flex-container">
       <div>
-        <textarea id="in1" rows="30"></textarea>
+        <div class="settings"></div>
+        <pre id="hiddenPre"></pre>
+        <textarea id="in1" class="common"></textarea>
       </div>
       <div>
-        <pre id="out1"></pre>
+        <pre id="out1" class="common"></pre>
       </div>
     </div>
     <!-- <div><textarea id="in2"></textarea></div> -->

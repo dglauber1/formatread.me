@@ -27,7 +27,7 @@ function reformatText(textInput, marginWidth, allowOverflow, showMargin) {
         outputText += reformattedParagraphs.join("\n\n") + "\n"; // adds an extra two newlines between paras
     }
 
-    outputText = outputText.slice(0, outputText.length - 1); // remove final newline
+    outputText = outputText.trim(); // remove trailing whitespace
 
     if (showMargin) {
         outputText = addMargin(outputText, marginWidth);
