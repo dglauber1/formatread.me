@@ -27,7 +27,7 @@ textarea {
     /* outline: none; */
 }
 
-#hiddenPre {
+.hiddenPre {
     display: none;
     white-space: pre-wrap;
     word-wrap: break-word;
