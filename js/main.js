@@ -39,7 +39,7 @@ $('#clearbutton').click(function(event) {
     $('#in1').css('height', 0);
 });
 
-function updateTextAreaHeight() {
+function updateTextAreaHeight() { // TODO still a little buggy
     content = $('#in1').val();
     hiddenPre.html(content + '\n');
     $('#in1').css('height', hiddenPre.height());
@@ -61,3 +61,6 @@ function updateTextAreaHeight() {
     // $('#in1').attr('rows', numLines);
     // console.log(numLines);
 }
+
+updateTextAreaHeight();
+$('#out1').html(reformatText($('#in1').val(), marginWidth, true, showMargin));
