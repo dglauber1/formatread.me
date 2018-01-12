@@ -12,6 +12,10 @@ var re = /\n{2,}/; // TODO: maybe also split on tabs (tab indicates new paragrap
 //
 // Returns textInput reformatted with ideal line breaks (minimum penalty)
 function reformatText(textInput, marginWidth, allowOverflow, showMargin) {
+    if (textInput.trim() == '') {
+        return textInput;
+    }
+
     comments = textInput.trim().split(commentSymbol);
     var outputText = "";
     var i;

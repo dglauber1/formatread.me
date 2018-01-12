@@ -13,15 +13,21 @@ body {
     font-size: 0.95vmax;
     width: 80ch;
     min-height: 200px;
+    margin-right: 3ch;
 }
 
 textarea {
+    max-height: 800px;
+    autocomplete: off;
+    autocorrect: off;
+    autocapitalize: off;
+    spellcheck: false;
     resize: none;
-    overflow: hidden;
+    /* overflow: hidden; no scrollbar */
     /* outline: none; */
 }
 
-.hiddenPre {
+#hiddenPre {
     display: none;
     white-space: pre-wrap;
     word-wrap: break-word;
